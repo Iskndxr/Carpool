@@ -3,6 +3,6 @@ services:
     name: carpool-django-app
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn CarPool.wsgi:application"
+    startCommand: "gunicorn KPMBcarpool.wsgi:application --log-file -"
     autoDeploy: true
     branch: master
