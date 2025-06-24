@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: carpool-django-app
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn KPMBcarpool.wsgi:application"
+    autoDeploy: true
+    branch: master
