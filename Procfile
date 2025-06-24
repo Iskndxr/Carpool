@@ -1,1 +1,1 @@
-web: gunicorn KPMBcarpool.wsgi:application
+web: gunicorn CarPool.wsgi:application
