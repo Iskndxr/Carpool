@@ -2,7 +2,9 @@ services:
   - type: web
     name: carpool-django-app
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn KPMBcarpool.wsgi:application --log-file -"
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn KPMBcarpool.wsgi:application --log-file -
     autoDeploy: true
     branch: master
